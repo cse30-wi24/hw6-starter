@@ -1,0 +1,4 @@
+.*.swp
+*.o
+/conv_inf
+/fpconvert
