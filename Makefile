@@ -15,7 +15,7 @@ AS = gcc
 ASLIST = -Wa,-adhln
 ASFLAGS = -I.
 
-%.o : %.s
+%.o : %.S
 	$(AS) -c $(ASFLAGS) $(DEBUG) $< -o $@
 
 .PHONY: clean
