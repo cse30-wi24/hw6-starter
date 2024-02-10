@@ -23,5 +23,8 @@ ASFLAGS = -I.
 $(EXE) : $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBS) -o $@
 
+cfpconvert: main.o cfpconvert.o
+	$(CC) $(CFLAGS) $^ $(LIBS) -o $(@)
+
 clean :
 	rm -rf $(OBJS) $(EXE)
