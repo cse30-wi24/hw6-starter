@@ -3,6 +3,7 @@
 # we provide a phony target clean to rm all the .o files
 
 EXE = fpconvert
+CEXE = cfpconvert
 SRC = main.c fpconvert.S convert_inf.S
 OBJS = main.o fpconvert.o convert_inf.o
 LIBS =
@@ -23,8 +24,8 @@ ASFLAGS = -I.
 $(EXE) : $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBS) -o $@
 
-cfpconvert: main.o cfpconvert.o
+$(CEXE): main.o cfpconvert.o
 	$(CC) $(CFLAGS) $^ $(LIBS) -o $(@)
 
 clean :
-	rm -rf $(OBJS) $(EXE)
+	rm -rf $(OBJS) $(EXE) $(CEXE)
